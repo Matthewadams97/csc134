@@ -1,4 +1,4 @@
 # csc134 Repository
-Created fo m1LAB
+Created fo M1LAB
 Adams
 1/15/2018
