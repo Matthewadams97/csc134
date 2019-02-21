@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1550776514 source:c:\users\adamsm7133\desktop\m4lab_adams\dataman\dataman\arithmetic.cpp
+
+1550776723 source:c:\users\adamsm7133\desktop\m4lab_adams\dataman\dataman\main.cpp
+	<iostream>
+	"arithmetic.h"
+
+1550776723 c:\users\adamsm7133\desktop\m4lab_adams\dataman\dataman\arithmetic.h
+
