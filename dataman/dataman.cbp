@@ -35,6 +35,8 @@
 		<Unit filename="arithmetic.cpp" />
 		<Unit filename="arithmetic.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="tempConversion.cpp" />
+		<Unit filename="tempConversion.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
