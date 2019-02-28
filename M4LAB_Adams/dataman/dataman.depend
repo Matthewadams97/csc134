@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1550776514 source:c:\users\adamsm7133\desktop\m4lab_adams\dataman\dataman\arithmetic.cpp
+
+1550776723 source:c:\users\adamsm7133\desktop\m4lab_adams\dataman\dataman\main.cpp
+	<iostream>
+	"arithmetic.h"
+
+1550776723 c:\users\adamsm7133\desktop\m4lab_adams\dataman\dataman\arithmetic.h
+
+1551376999 source:c:\users\adamsm7133\desktop\dataman\arithmetic.cpp
+
+1551381938 source:c:\users\adamsm7133\desktop\dataman\main.cpp
+	<iostream>
+	"arithmetic.h"
+	"tempConversion.h"
+
+1551376999 c:\users\adamsm7133\desktop\dataman\arithmetic.h
+
+1551376999 c:\users\adamsm7133\desktop\dataman\tempconversion.h
+
+1551382061 source:c:\users\adamsm7133\desktop\dataman\tempconversion.cpp
+
