@@ -19,7 +19,7 @@ int main_arithmetic(){
     cin >> numberOne ;
     cout << "Please enter the second number" << endl;
     cin >> numberTwo ;*/
-    cout << "Enter the expression separated by spaces " << endl;
+    cout << "Enter the expression " << endl;
     cin >> numberOne >> opcode >> numberTwo ;
     if (opcode == '+'){
         cout << add(numberOne,numberTwo) << endl;
@@ -58,13 +58,11 @@ void main_menu(){
         main_arithmetic();
         break;
     case 2 :
-        cout << "2" << endl;
-        cout << "to do" << endl;
         tempConvertMenu();
         break;
-    /*case 3 :
+    case 3 :
         cout << "3" << endl;
-        break;*/
+        break;
     case 0 :
         cout << "exiting" << endl;
         break;
@@ -76,6 +74,7 @@ void main_menu(){
     while (choice != 0) ;
 }
 
+
 void print_main_menu ()
 {
     // display main menu
@@ -85,4 +84,65 @@ void print_main_menu ()
     cout << "2. Temp conversion" << endl;
     cout << "0. to exit" << endl;
     cout << "main menu here" << endl;
+}
+
+
+void printTempConvertMenu(){
+cout << "Temp Conversion Menu" << endl;
+cout << "--------------------" << endl;
+cout << "1. Kelvin to Celsius" << endl;
+cout << "2. Celsius to Kelvin" << endl;
+cout << "3. Celsius to Fahrenheit" << endl;
+cout << "4. Fahrenheit to Celsius" << endl;
+}
+
+
+void tempConvertMenu(){
+int choiceTwo;
+float tempK;
+float tempC;
+float tempF;
+float Conversion;
+//float kConstant = 273.15;
+    do {
+        printTempConvertMenu();
+        cout << "option:" << endl;
+        cin >> choiceTwo ;
+    switch (choiceTwo){
+    case 1 :
+        cout << "this will convert K to C" << endl;
+        cout << "Please enter the temp in K:" << endl;
+        cin >> tempK;
+        convertKtoC(tempK);
+        cout  << "the temp is : " << convertKtoC(tempK) << endl;
+    break;
+    case 2 :
+        cout << "this will convert C to K" << endl;
+        cout << "Please enter the temp in C:" << endl;
+        cin >> tempC;
+        convertCtoK(tempC);
+        cout << "the temp in K is : " << convertCtoK(tempC) << endl;
+    break;
+    case 3 :
+        cout << "This is will convert the temp in C to F" << endl;
+        cout << "Please enter the the temp in C:" << endl;
+        cin >> tempC;
+        convertCtoF(tempC);
+        cout << "the temp in F is : " << convertCtoF(tempC) << endl;
+        break;
+    case 4 :
+        cout << "This is will convert the temp in F to C" << endl;
+        cout << "Please enter the the temp in F:" << endl;
+        cin >> tempF;
+        convertFtoC(tempF);
+        cout << "the temp in C is : " << convertFtoC(tempF) << endl;
+        break;
+    case 0 :
+        cout << "exiting" << endl;
+    break;
+    default:
+        cout << "invalid choice" << endl;
+        }
+    }
+    while (choiceTwo != 0) ;
 }

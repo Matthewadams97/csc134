@@ -1,57 +1,24 @@
-#include <iostream>
-using namespace std;
 float convertCtoK();
-float tempK;
-float tempC;
 float convertKtoC();
-void printTempConvertMenu(){
-cout << "Temp Conversion Menu" << endl;
-cout << "--------------------" << endl;
-cout << "1. Kelvin to Celsius" << endl;
-cout << "2. Celsius to Kelvin" << endl;
-}
-
-void tempConvertMenu(){
-int choiceTwo;
-
-    do {
-        printTempConvertMenu();
-        cout << "option:" << endl;
-        cin >> choiceTwo ;
-    switch (choiceTwo){
-    case 1 :
-        cout << "this will convert K to C using float convertKtoC" << endl;
-        cout << "intput the Temp:" << endl;
-        cin >> tempK;
-        float convertKtoC(float tempK);
-    break;
-    case 2 :
-        cout << "this will convert C to K using float convertCtoK" << endl;
-    break;
-    case 0 :
-        cout << "exiting" << endl;
-    break;
-    default:
-        cout << "invalid choice" << endl;
-        }
-    }
-    while (choiceTwo != 0) ;
-}
-
-
+float convertFtoC();
+float convertCtoF();
 
 float convertKtoC(float tempK){
-cout << "see if this works" << endl;
-cout << "input the temp in K:" << endl;
-float convertCtoK=tempK - 273.15;
-
+float Conversion = tempK - 273.15;
+return Conversion;
 }
 
+float convertFtoC(float tempF){
+float Conversion = (tempF-32) * 5/9;
+return Conversion;
+}
 
+float convertCtoF(float tempC){
+float Conversion = (tempC*1.8) + 32;
+return Conversion;
+}
 
 float convertCtoK(float tempC){
-cout << "see if this works" << endl;
-cout << "input the temp in C:" << endl;
-
-
+float Conversion = tempC + 273.15;
+return Conversion;
 }

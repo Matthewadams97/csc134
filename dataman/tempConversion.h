@@ -4,6 +4,7 @@
 void tempConvertMenu();
 float convertKtoC(float);
 float convertCtoK(float);
-
+float convertCtoF(float);
+float convertFtoC(float);
 
 #endif // TEMPCONVERSION_H_INCLUDED
