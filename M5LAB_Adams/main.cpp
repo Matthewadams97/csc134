@@ -4,7 +4,7 @@
 // 3/19/2019
 
 #include <iostream>
-
+#include "room.cpp"
 using namespace std;
 
 int main()
@@ -51,9 +51,16 @@ int main()
         cout << description[i] << endl;
         cout << "the Exits are " << exits[i] << endl;
         cout << "" << endl;
-
-
     }
+
+    Room myBedroom;
+    myBedroom.name = "My bedroom";
+    myBedroom.description = "This is my bedroom. There is a desk with my car keys on it.";
+    myBedroom.exit = "west";
+
+    cout << "The room you are in is " << myBedroom.name << endl;
+    cout << myBedroom.description << endl;
+    cout << "The exits are " << myBedroom.exit << endl;
 
     return 0;
 }
