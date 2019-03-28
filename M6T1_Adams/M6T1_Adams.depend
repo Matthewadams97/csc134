@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1553798056 source:c:\users\adamsm7133\desktop\m6t1_adams\main.cpp
+	<iostream>
+	"observer.h"
+
+1553796145 source:c:\users\adamsm7133\desktop\m6t1_adams\observer.cpp
+
+1553798056 c:\users\adamsm7133\desktop\m6t1_adams\observer.h
+
