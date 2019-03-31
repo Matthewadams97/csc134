@@ -2,10 +2,10 @@
 #include "observer.h"
 using namespace std;
 
-void Dog::Respond()
-{
-    cout << "Bark Bark" << endl;
-}
+
+void Dog :: Respond(){
+cout << "Bark Bark" << endl;}
+
 
 void Police::Respond()
 {
@@ -17,11 +17,12 @@ void Subject::AddObserver(Observer *Item)
     List [count] = Item;
     count ++;
 }
-void Subject:: removeObserver(Observer *Item)
+void Subject :: RemoveObserver(Observer *Item)
 {
     int i;
     bool found = false;
-    for (i=0; i< count; i++){
+    for (i=0; i < count; i++){
+    if (found)
     {
     }
     else if (List[i] == Item){

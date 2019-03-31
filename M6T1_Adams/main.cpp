@@ -4,17 +4,17 @@ using namespace std;
 
 int main()
 {
-    Subject Alarm;
-
-    Police *TJHoooker = new Police(&Alarm, "TJ");
-    cout << "TJ on the beat" << endl;
-    Alarm.Event();
-    cout << endl;
-    cout << "TJ off for the day" << endl;
-    delete TJHoooker;
-    Alarm.Event();
-
-
+  Dog Fido;
+  Police TJHooker("TJ");
+  Police JoeFriday("Joe");
+  Subject Alarm;
+  Subject Donuts;
+  Alarm.AddObserver(&Fido);
+  Donuts.AddObserver(&TJHooker);
+  Alarm.AddObserver(&JoeFriday);
+  //Alarm.RemoveObserver(&JoeFriday);
+  Alarm.Event();
+  //Donuts.Event();
 
 
     return 0;
