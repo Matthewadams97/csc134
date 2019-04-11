@@ -15,5 +15,7 @@ int main()
     cout << "Hello world!" << endl;
     Game ME;
     ME.startGame();
+    ME.doNextTurn();
+    ME.commandLook();
     return 0;
 }

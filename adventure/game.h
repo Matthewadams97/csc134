@@ -29,6 +29,9 @@ public:
     ~Game();
     void startGame();
     void gameOver();
+    void doNextTurn();
+    void commandGo(string);
+    void commandLook();
 
 };
 
