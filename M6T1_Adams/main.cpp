@@ -18,14 +18,15 @@ void testRooms() {
     Room* h = new Room("Front Lawn","This is the front lawn, My car is in the drive way and it is time to leave for class.");
     a->west = b;
 
-    b->east = a;
-    b->west = c;
+    b->east  = a;
+    b->west  = c;
 
-    c->east = b;
-    c->west= d;
-    d->east = c;
-    c->west = d;
+    c->east  = b;
+    c->west  = d;
+    d->east  = c;
+    c->west  = d;
     d->north = e;
+    e->south = d;
 
     // going for a walk
     Room* myLocation = a;
@@ -98,8 +99,8 @@ void testRooms() {
 
 
     cout << "" << endl;
-    cout << "... headed east..." << endl;
-    myLocation = myLocation->east;
+    cout << "... headed south..." << endl;
+    myLocation = myLocation->south;
     cout << myLocation->printInfo();
     cout << "" << endl;
 
