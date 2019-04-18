@@ -12,10 +12,14 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    Game ME;
-    ME.startGame();
-    ME.doNextTurn();
-    ME.commandLook();
+    Game g;
+    g.startGame();
+    while (g.isRunning() == true)
+    {
+        g.doNextTurn();
+    }
+    //g.doNextTurn();
+    //g.commandLook();
+    //g.gameOver();
     return 0;
 }

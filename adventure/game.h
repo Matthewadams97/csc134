@@ -22,12 +22,14 @@ private:
 
     vector <Room*> rooms;
     Player player;
+    bool gameIsRunning;
     //add items and npcs?
 
 public:
     Game();
     ~Game();
     void startGame();
+    bool isRunning();
     void gameOver();
     void doNextTurn();
     void commandGo(string);

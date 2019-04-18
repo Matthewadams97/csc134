@@ -36,10 +36,26 @@ string Room::printInfo() {
     // note the next few lines are all one line of code
     // that doesn't end until the semicolon
     string endl = "\n";
+    string space = " ";
 
     string output = name + endl
                     + description + endl;
 
-    return output;
+    // list all exits
+    output += "Exits: ";
+    if (north != 0) {
+        output += "north" + space;
+    }
+    if (south != 0) {
+        output += "south" + space;
+    }
+    if (east != 0) {
+        output += "east" + space;
+    }
+    if (west != 0) {
+        output += "west" + space;
+    }
+
+    return output += endl;
 
 }
