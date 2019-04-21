@@ -48,9 +48,20 @@ void Game::startGame()
     }
 
 
-    rooms[0]->west = rooms[1];
-    rooms[1]->east = rooms[0];
-
+    rooms[0]->east  = rooms[1];
+    rooms[1]->west  = rooms[0];
+    rooms[1]->north = rooms[2];
+    rooms[2]->south = rooms[1];
+    rooms[2]->north = rooms[3];
+    rooms[3]->south = rooms[2];
+    rooms[3]->west  = rooms[5];
+    rooms[5]->east  = rooms[3];
+    rooms[3]->north = rooms[4];
+    rooms[4]->south = rooms[3];
+    rooms[3]->east  = rooms[6];
+    rooms[6]->west  = rooms[3];
+    rooms[6]->east  = rooms[7];
+    rooms[7]->west  = rooms[6];
 /*    b->west = c;
     c->east = b;
     c->west= d;
