@@ -62,13 +62,17 @@ void Game::startGame()
     rooms[6]->west  = rooms[3];
     rooms[6]->east  = rooms[7];
     rooms[7]->west  = rooms[6];
-/*    b->west = c;
-    c->east = b;
-    c->west= d;
-    d->east = c;
-    c->west = d;
-    d->north = e;
-*/
+
+    Item keys        = Item("keys", "Your car keys for the car in the front lawn", 0);
+    Item backpack    = Item("Backpack", "Your books for class are in here. Might need those.", 6);
+    Item waterbottle = Item("Waterbottle", "Filled with water, to stay hydrated all day.", 4);
+
+
+    itemList.add(keys);
+    itemList.add(backpack);
+    itemList.add(waterbottle);
+
+    itemList.printAllItems();
 
     player.location = rooms[0];
 

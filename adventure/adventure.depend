@@ -1,30 +1,32 @@
 # depslib dependency file v1.0
-1555612283 source:c:\users\adamsm7133\desktop\adventure\main.cpp
+1556647405 source:c:\users\adamsm7133\desktop\adventure\main.cpp
 	<iostream>
 	"game.h"
 	"player.h"
 	"room.h"
 
-1555607591 source:c:\users\adamsm7133\desktop\adventure\player.cpp
+1556647405 source:c:\users\adamsm7133\desktop\adventure\player.cpp
 	"player.h"
 
-1555612121 source:c:\users\adamsm7133\desktop\adventure\room.cpp
+1556647405 source:c:\users\adamsm7133\desktop\adventure\room.cpp
 	"room.h"
 
-1555607591 c:\users\adamsm7133\desktop\adventure\room.h
+1556647405 c:\users\adamsm7133\desktop\adventure\room.h
 	<string>
 
-1555611946 source:c:\users\adamsm7133\desktop\adventure\game.cpp
+1556647405 source:c:\users\adamsm7133\desktop\adventure\game.cpp
 	"game.h"
 
-1555610938 c:\users\adamsm7133\desktop\adventure\game.h
+1556649208 c:\users\adamsm7133\desktop\adventure\game.h
 	<iostream>
 	<vector>
 	<string>
+	"constants.h"
 	"room.h"
 	"player.h"
+	"item.h"
 
-1555607591 c:\users\adamsm7133\desktop\adventure\player.h
+1556647866 c:\users\adamsm7133\desktop\adventure\player.h
 	<string>
 	"room.h"
 
@@ -56,4 +58,14 @@
 
 1555878098 source:c:\users\matta\desktop\adventure\game.cpp
 	"game.h"
+
+1556647866 c:\users\adamsm7133\desktop\adventure\constants.h
+
+1556647866 c:\users\adamsm7133\desktop\adventure\item.h
+	<string>
+	<vector>
+
+1556648680 source:c:\users\adamsm7133\desktop\adventure\item.cpp
+	"item.h"
+	<iostream>
 

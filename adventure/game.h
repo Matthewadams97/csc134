@@ -5,8 +5,10 @@
 #include <vector>
 #include <string>
 
+#include "constants.h"
 #include "room.h"
 #include "player.h"
+#include "item.h"
 
 using namespace std;
 
@@ -24,6 +26,7 @@ private:
     Player player;
     bool gameIsRunning;
     //add items and npcs?
+    ItemList itemList;
 
 public:
     Game();
