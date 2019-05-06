@@ -41,6 +41,17 @@ void Game::startGame()
                             "This is the front lawn, My car is in the drive way and it is time to leave for class."
                             };
 
+    const int BEDRROM = 0;
+    const int The_Upstairs_Hallway = 1;
+    const int The_Stairs = 2;
+    const int Downstairs_Hallway = 3;
+    const int The_kitchen = 4;
+    const int The_dining_room = 5;
+    const int The_living_room = 6;
+    const int Front_Lawn = 7;
+    int locationId[] = {BEDRROM,The_Upstairs_Hallway,The_Stairs,Downstairs_Hallway,The_kitchen,The_dining_room,The_living_room,Front_Lawn};
+
+
     for (int i=0; i < NUM_ROOMS; i++) {
         rooms[i] = new Room();
         rooms[i]->name = names[i];
@@ -106,6 +117,10 @@ void Game::doNextTurn(){
     }
     else if(verb == "look"){
         commandLook();
+    }
+    else if (verb == "examine") {
+        cin >> noun;
+        commandExamine(noun);
     }
     else if (verb == "quit"){
         gameOver();
@@ -173,6 +188,28 @@ void Game::commandLook(){
     cout << player.location->printInfo();
 
     }
+// ITEM COMMANDS
+void Game::commandExamine(string noun) {
+    if (itemList.isItemHere(noun, player.location->locationId)) {
+
+        //print the description of that item
+        cout << itemList.getItemDescription(noun) << endl;
+        cout << "It's on the floor here." << endl;
+    }
+    else if (itemList.isItemHere(noun, INVENTORY))
+    {
+
+        // print the description of that item
+        cout << itemList.getItemDescription(noun) << endl;
+        cout << "You're carrying that." << endl;
+    }
+    else
+    {
+        cout << "That is not here." << endl;
+    }
+}
+
+
 
 
 bool Game::isRunning()

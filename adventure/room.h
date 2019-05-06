@@ -22,6 +22,7 @@ public:
     Room();     // default constructor
     Room(string, string); // name and description
     string printInfo();
+    int     locationId;
 
     string name;
     string description;

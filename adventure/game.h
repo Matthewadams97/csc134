@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const int NUM_ROOMS = 8;
+//const int NUM_ROOMS = 8;
 
 
 class Game
@@ -26,7 +26,12 @@ private:
     Player player;
     bool gameIsRunning;
     //add items and npcs?
-    ItemList itemList;
+    ItemList itemList;\
+    void commandExamine(string);
+    void commandInventory();
+    void commandGet(string);
+    void commandDrop(string);
+
 
 public:
     Game();
