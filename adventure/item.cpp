@@ -77,6 +77,8 @@ void ItemList::add(Item item)
     _items.push_back(item);
 }
 
+/*
+
 bool ItemList::isItemHere(string itemName, int locationId)
 {
     // This method looks up an item by name
@@ -132,3 +134,71 @@ void ItemList::updateLocation(string itemName, int locId) {
         itemIter++; // go to next item
     }
 }
+
+*/
+
+
+Item* ItemList::getItemByName(string itemName) {
+    // if the item exists, return a pointer to it
+    // if not, return zero (null pointer)
+    // this is a utility function that makes
+    // any other itemList functions modifying items
+    // much simpler
+    Item* pItem = 0;
+
+    vector<Item>::iterator iter = _items.begin();
+
+    while (iter != _items.end()) {
+        if (iter->getName() == itemName) {
+            // convert the iterator to a regular item pointer
+            pItem = &*iter; // yes, this syntax is weird.
+        }
+        iter++; // go to next item
+    }
+    return pItem;
+}
+
+// now that we have getItemByName, this is much shorter!
+void ItemList::updateLocation(string itemName, int locId) {
+
+    Item* pItem = getItemByName(itemName);
+
+    if (pItem != 0)
+    {
+        pItem->setLocationId(locId);
+    }
+}
+
+string ItemList::getItemDescription(string itemName)
+{
+    // input: the name of an item
+    // output: its description
+    string description = "NOT FOUND";
+
+    Item* pItem = getItemByName(itemName);
+
+    if (pItem != 0)
+    {
+        description = pItem->getDescription();
+    }
+    return description;
+}
+
+bool ItemList::isItemHere(string itemName, int locationId)
+{
+    // This method looks up an item by name
+    // returns true if it is in this locationId, else false
+
+    Item* pItem = getItemByName(itemName);
+
+    if (pItem != 0) // does this item exist?
+    {
+        if (locationId == pItem->getLocationId() )
+            {
+                return true; // right name and right location
+            } // item wasn't in this room
+    }
+    return false; // we didn't find it
+}
+
+

@@ -41,14 +41,7 @@ void Game::startGame()
                             "This is the front lawn, My car is in the drive way and it is time to leave for class."
                             };
 
-    const int BEDRROM = 0;
-    const int The_Upstairs_Hallway = 1;
-    const int The_Stairs = 2;
-    const int Downstairs_Hallway = 3;
-    const int The_kitchen = 4;
-    const int The_dining_room = 5;
-    const int The_living_room = 6;
-    const int Front_Lawn = 7;
+
     int locationId[] = {BEDRROM,The_Upstairs_Hallway,The_Stairs,Downstairs_Hallway,The_kitchen,The_dining_room,The_living_room,Front_Lawn};
 
 
@@ -56,36 +49,40 @@ void Game::startGame()
         rooms[i] = new Room();
         rooms[i]->name = names[i];
         rooms[i]->description = description[i];
+        rooms[i]->locationId = locationId[i];
     }
 
 
-    rooms[0]->east  = rooms[1];
-    rooms[1]->west  = rooms[0];
-    rooms[1]->north = rooms[2];
-    rooms[2]->south = rooms[1];
-    rooms[2]->north = rooms[3];
-    rooms[3]->south = rooms[2];
-    rooms[3]->west  = rooms[5];
-    rooms[5]->east  = rooms[3];
-    rooms[3]->north = rooms[4];
-    rooms[4]->south = rooms[3];
-    rooms[3]->east  = rooms[6];
-    rooms[6]->west  = rooms[3];
-    rooms[6]->east  = rooms[7];
-    rooms[7]->west  = rooms[6];
+    rooms[BEDRROM]->east  = rooms[The_Upstairs_Hallway];
+    rooms[The_Upstairs_Hallway]->west  = rooms[BEDRROM];
+    rooms[The_Upstairs_Hallway]->north = rooms[The_Stairs];
+    rooms[The_Stairs]->south = rooms[The_Upstairs_Hallway];
+    rooms[The_Stairs]->north = rooms[Downstairs_Hallway];
+    rooms[Downstairs_Hallway]->south = rooms[The_Stairs];
+    rooms[Downstairs_Hallway]->west  = rooms[The_dining_room];
+    rooms[The_dining_room]->east  = rooms[Downstairs_Hallway];
+    rooms[Downstairs_Hallway]->north = rooms[The_kitchen];
+    rooms[The_kitchen]->south = rooms[Downstairs_Hallway];
+    rooms[Downstairs_Hallway]->east  = rooms[The_living_room];
+    rooms[The_living_room]->west  = rooms[Downstairs_Hallway];
+    rooms[The_living_room]->east  = rooms[Front_Lawn];
+    rooms[Front_Lawn]->west  = rooms[The_living_room];
 
-    Item keys        = Item("keys", "Your car keys for the car in the front lawn", 0);
-    Item backpack    = Item("Backpack", "Your books for class are in here. Might need those.", 6);
-    Item waterbottle = Item("Waterbottle", "Filled with water, to stay hydrated all day.", 4);
-
-
+    Item keys        = Item("keys", "Your car keys for the car in the front lawn", BEDRROM);
     itemList.add(keys);
+    Item backpack    = Item("Backpack", "Your books for class are in here. Might need those.", The_living_room);
     itemList.add(backpack);
+    Item waterbottle = Item("Waterbottle", "Filled with water, to stay hydrated all day.", The_kitchen);
     itemList.add(waterbottle);
 
-    itemList.printAllItems();
 
-    player.location = rooms[0];
+    //itemList.add(keys);
+    //itemList.add(backpack);
+    //itemList.add(waterbottle);
+
+    //itemList.printAllItems();
+
+    player.location = rooms[BEDRROM];
 
     cout << player.location->printInfo();
 
@@ -186,6 +183,7 @@ void Game::commandLook(){
     //cout << "use to find descriptions of rooms" << endl;
 
     cout << player.location->printInfo();
+    itemList.printItemsInLocation(player.location->locationId);
 
     }
 // ITEM COMMANDS

@@ -36,7 +36,7 @@ public:
     bool isItemHere(string, int); // name of item, location id
     string getItemDescription(string);
     void updateLocation(string, int); // name of item, location id
-
+    Item* getItemByName(string);
 
 
 private:
